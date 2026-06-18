@@ -1,0 +1,90 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll            long long int
+#define pii            pair<ll,ll>
+#define fast_io             ios::sync_with_stdio(false);  cin.tie(NULL);
+#define nl             "\n"
+#define pb             push_back
+#define py             cout<<"YES\n";
+#define pn             cout<<"NO\n";
+#define sz(x)          ((ll)(x).size())
+#define all(x)            x.begin(),x.end()
+#define vlowerB(v,x)   lower_bound(v.begin(),v.end(),x)
+#define vupperB(v,x)   upper_bound(v.begin(),v.end(),x)
+#define F              first
+#define S              second
+#define rep(i,a,b)     for(ll i=a;i<=b;i++)
+#define rep2(i,b,a)    for(ll i=b;i>=a;i--)
+#define vi             vector<ll>
+#define countBit(x)      __builtin_popcountll(x)
+#define zrbits(x)      __builtin_ctzll(x)
+const ll MOD=1e9+7;
+const ll N=2e5+9;
+ll dx[8] = { 1,0,-1,0,-1,1,-1,1 };
+ll dy[8] = { 0,1,0,-1,-1,1,1,-1 };
+#include<ext/pb_ds/assoc_container.hpp>
+#include<ext/pb_ds/tree_policy.hpp>
+using namespace __gnu_pbds;
+template <typename T> using pbds = tree<T, null_type, less_equal<T>, rb_tree_tag, tree_order_statistics_node_update>;
+bool comp(pair<ll,ll> &p1,pair<ll,ll> &p2)
+{
+     if(p1.first==p2.first)
+       return p1.second<p2.second;
+     return p1.first<p2.first;
+}
+//if we need another pair ,make struct
+struct Range{
+ll l,r,idx;
+};
+template<typename T>
+void print(const T & container){
+    for(const auto &x: container){
+        cout<<x<<" ";
+    }
+    cout<<'\n';
+}
+ll power(ll a, ll b)
+{
+    ll result = 1;
+    while (b > 0)
+    {
+        if (b & 1)
+        {
+            result = (result * 1ll * a) % MOD;
+        }
+        a = (a * 1ll * a) % MOD;
+        b >>= 1;
+    }
+    return result;
+}
+void solve(){
+   string s; cin>>s;
+   ll n; cin>>n;
+   vi a(n);
+   rep(i,0,n-1) cin>>a[i];
+   for(int i=0;i<n;i++){
+    ll curr=0;
+    for(char ch:s){
+        ll d=ch-'0';
+        curr=curr*10+d;
+        curr%=a[i];
+    }
+    if(curr!=0){
+        pn
+        return;
+    }
+   }
+   py
+}
+int32_t main()
+{
+   fast_io
+   ll t=1;
+   cin>>t;
+   // ll tt=t;
+   while(t--){
+    //cout<<"Case "<<tt-t<<": ";
+    solve();
+   }
+    return 0;
+}
